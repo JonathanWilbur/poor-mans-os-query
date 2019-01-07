@@ -1,0 +1,59 @@
+- ON DUPLICATE KEY IGNORE
+- UNIQUE constraints
+- Getters
+  - ACPI Tables (acpidump -> acpixtract -> iasl)
+  - turbostat output
+  - lscpu (This gives you physical CPUs, whereas /proc/cpuinfo is logical CPUs)
+  - APT Repositories*
+  - Debian packages
+  - iptables (This is going to be really hard)
+  - Listening ports (ss -nape; this is going to be kind of difficult)
+  - SAR Reports
+  - mtab (This file is not well documented, and it's pretty wonky.)
+  - NFS Shares (This is going to be hard)
+  - Crontab (Difficult)
+  - Anacrontab (Difficult)
+  - Sudoers
+  - File Hashes
+  - ip route (I don't know how to parse this one)
+  - SELinux Contexts (This will be hard to parse, because the leftmost field is a regular expression.)
+  - Zypper packages
+  - Gentoo packages
+  - Nix packages
+  - Xinetd services*
+  - Systemd
+    - Services*
+    - Sockets
+  - GPG Keys (This is hard to parse)
+  - Security Alerts
+    - SELinux Disabled
+    - Firewall Disabled
+    - Permissive Files
+    - Expired Trusted TLS Roots
+    - Settings do not match persistent configuration
+      - SELinux
+        - Contexts
+        - Enforcement
+      - Networking
+      - User logged in despite being locked
+      - Service running despite being disabled
+    - Unlicensed server
+    - No support for newer TLS versions
+    - No updates in a long time
+    - Unsafe DMI states
+    - OpenSSL Versions
+- Makefile that combines all getters
+  - At the end, it should either combine all inserts into one file or one archive
+  - At the end, delete all but the desired file
+- Script arguments
+  - Send to database instead of files
+- Makefile that builds `./dist/getter.sh` from all scripts
+- Add timestamps and make all hostID fields reference an `OSQuery` row instead.
+
+- Licensing Server
+  - Adds unique ID throughout the script
+  - "Whistleblowers will be rewarded."
+  - Reports to mothership with each usage
+  - Leaves behind a file
+
+https://www.kernel.org/doc/Documentation/admin-guide/devices.txt
